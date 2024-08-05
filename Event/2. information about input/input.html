@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Page</title>
+</head>
+<body>
+    <input type="text" 
+    id="myInput" 
+    name="myInput" 
+    placeholder="type something..."/>
+
+    <div>
+        <div id="inputName">input name : </div>
+        <div id="inputValue">input value : </div>
+        <div id="inputType">input type :</div>
+        <div id="eventType">event type : </div>
+    </div>
+</body>
+<script>
+    const myInput = document.querySelector('#myInput')
+    myInput.addEventListener('input',(event)=>{
+        // console.log(event);
+
+        // console.log('input name : ',event.target.name);
+        document.querySelector('#inputName').textContent = `input name : ${event.target.name}`
+
+        // console.log('input value : ',event.target.value);
+        document.querySelector('#inputValue').textContent = `input value : ${event.target.value}`
+
+        // console.log('input type : ',event.inputType);
+        document.querySelector('#inputType').textContent = `input type : ${event.inputType}`
+
+        // console.log('event type : ',event.type);
+        document.querySelector('#eventType').textContent = `event type : ${event.type}`
+        
+    })
+</script>
+</html>
