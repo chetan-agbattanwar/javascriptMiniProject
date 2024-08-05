@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <button id="addData">add data to Local Storage</button>
+    <button id="getData">get data from Local Storage</button>
+    <button id="deleteData">delete data from Local Storage</button>
+</body>
+<script>
+    const add = document.querySelector('#addData')
+    const get = document.querySelector('#getData')
+    const del = document.querySelector('#deleteData')
+
+    // add data
+    const myBio = {
+        firstName:'Akshay',
+        lastName:'kumar',
+        gender:'Male',
+        age:20
+    }
+    add.addEventListener('click',()=>{
+        localStorage.setItem('myBio',JSON.stringify(myBio))
+        alert("data added in local storage")
+    })
+
+    // get data
+    get.addEventListener('click',()=>{
+        if (JSON.parse(localStorage.getItem('myBio'))===null) {
+            console.log('data not found');
+            alert('data not found to get')
+        } else {
+        console.log(JSON.parse(localStorage.getItem('myBio')));
+        alert('data get')
+        }
+    })
+
+    // delete data
+    del.addEventListener('click',function(){
+        if (JSON.parse(localStorage.getItem('myBio'))===null) {
+            alert('no data found to delete from local storage')
+        } else{
+            localStorage.removeItem('myBio')
+            alert("data deleted from local storage")
+        }
+    })
+</script>
+</html>
