@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackGroundChanger</title>
+</head>
+<body>
+    <div id="buttonStorage">
+        <button id="black">Black</button>
+        <button id="white">White</button>
+        <button id="red">Red</button>
+        <button id="pink">Pink</button>
+        <button id="orange">Orange</button>
+    </div>
+</body>
+<script>
+    const body = document.querySelector('body')
+    const black = document.querySelector('#black')
+    const white = document.querySelector('#white')
+    const red = document.querySelector('#red')
+    const pink = document.querySelector('#pink')
+    const orange = document.querySelector('#orange')
+
+    black.addEventListener('click',()=>{
+        body.style.background = 'black'
+    })
+
+    white.addEventListener('click',()=>{
+        body.style.background = 'white'
+    })
+
+    red.addEventListener('click',()=>{
+        body.style.background = 'red'
+    })
+
+    pink.addEventListener('click',()=>{
+        body.style.background = 'pink'
+    })
+
+    orange.addEventListener('click',()=>{
+        body.style.background = 'orange'
+    })
+</script>
+</html>
