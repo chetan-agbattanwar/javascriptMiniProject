@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Page</title>
+</head>
+<body>
+    <h1>count : <span>0</span></h1>
+    <div class="button-container">
+        <button id="increment">+1</button>
+        <button id="reset">reset</button>
+        <button id="decrement">-1</button>
+    </div>
+</body>
+<script>
+    let span = document.querySelector('span')
+    let count = Number(span.innerText)
+    // console.log(typeof count);
+
+    // functionality for increment button
+    const increment = document.querySelector('#increment')
+    increment.addEventListener('click',()=>{
+        count += 1
+        span.innerText = count
+
+        if (count>0){
+            span.style.color = 'green'
+        }else if(count==0){
+            span.style.color = 'black'
+        }
+    })
+
+    // functionality for reset button
+    const reset = document.querySelector('#reset')
+    reset.addEventListener('click',()=>{
+        if (count===0) {
+            alert('counter is already zero')
+        } else {
+            count = 0
+            span.innerText = count
+            span.style.color = 'black'  
+        }
+    })
+
+    // functionality for decrement button
+    const decrement = document.querySelector('#decrement')
+    decrement.addEventListener('click',()=>{
+        count -= 1
+        span.innerText = count
+
+        if (count<0){
+            span.style.color = 'red'
+        } else if(count==0){
+            span.style.color = 'black'
+        }
+    })
+    
+</script>
+</html>
